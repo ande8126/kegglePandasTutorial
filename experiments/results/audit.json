@@ -1,0 +1,245 @@
+{
+  "checks": {
+    "unique_game_ids": true,
+    "no_raw_nulls": true,
+    "no_ties": true,
+    "positive_scores": true,
+    "distinct_opponents": true,
+    "unique_team_date": true,
+    "two_team_rows_per_game": true,
+    "merge_preserves_games": true,
+    "target_matches_merged_scores": true,
+    "season_history_resets": true,
+    "explicit_pregame_history_checks": true,
+    "score_perturbation_no_current_or_future_leakage": true
+  },
+  "feature_sets": {
+    "margin_only": [
+      "season_point_margin_diff"
+    ],
+    "core_margin_rest": [
+      "season_point_margin_diff",
+      "rest_days_diff"
+    ],
+    "current_8": [
+      "home_season_win_percentage",
+      "visitor_season_win_percentage",
+      "season_point_margin_diff",
+      "last5_point_margin_diff",
+      "rest_days_diff",
+      "last5_win_pct_diff",
+      "home_record_at_home",
+      "visitor_record_as_visitor"
+    ],
+    "full_24": [
+      "home_season_win_percentage",
+      "home_win_percentage_last_five_games",
+      "home_rest_days_since_last_game",
+      "home_average_point_differential",
+      "home_points_scored_per_game",
+      "home_points_scored_last_five_games",
+      "home_points_allowed_per_game",
+      "home_points_allowed_last_five_games",
+      "home_record_at_home",
+      "home_record_as_visitor",
+      "visitor_season_win_percentage",
+      "visitor_win_percentage_last_five_games",
+      "visitor_rest_days_since_last_game",
+      "visitor_average_point_differential",
+      "visitor_points_scored_per_game",
+      "visitor_points_scored_last_five_games",
+      "visitor_points_allowed_per_game",
+      "visitor_points_allowed_last_five_games",
+      "visitor_record_at_home",
+      "visitor_record_as_visitor",
+      "last5_win_pct_diff",
+      "season_point_margin_diff",
+      "last5_point_margin_diff",
+      "rest_days_diff"
+    ],
+    "core_plus_last5_margin": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "last5_point_margin_diff"
+    ],
+    "core_plus_last10_margin": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "margin_last_10_diff"
+    ],
+    "core_plus_last20_margin": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "margin_last_20_diff"
+    ],
+    "core_plus_ewm_margin": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "margin_ewm10_diff"
+    ],
+    "core_plus_win_pct": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "season_win_pct_diff"
+    ],
+    "core_plus_last5_wins": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "last5_win_pct_diff"
+    ],
+    "core_plus_venue": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "home_record_at_home",
+      "visitor_record_as_visitor"
+    ],
+    "core_plus_smoothed_venue": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "smoothed_venue_diff"
+    ],
+    "core_plus_schedule": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "back_to_back_diff",
+      "games_previous_3_days_diff"
+    ],
+    "core_plus_adjusted_margin": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "schedule_adjusted_margin_diff"
+    ],
+    "balanced_5": [
+      "season_point_margin_diff",
+      "rest_days_diff",
+      "season_win_pct_diff",
+      "margin_last_10_diff",
+      "smoothed_venue_diff"
+    ],
+    "without_recent_form": [
+      "home_season_win_percentage",
+      "home_rest_days_since_last_game",
+      "home_average_point_differential",
+      "home_points_scored_per_game",
+      "home_points_allowed_per_game",
+      "home_record_at_home",
+      "home_record_as_visitor",
+      "visitor_season_win_percentage",
+      "visitor_rest_days_since_last_game",
+      "visitor_average_point_differential",
+      "visitor_points_scored_per_game",
+      "visitor_points_allowed_per_game",
+      "visitor_record_at_home",
+      "visitor_record_as_visitor",
+      "season_point_margin_diff",
+      "rest_days_diff"
+    ],
+    "without_venue": [
+      "home_season_win_percentage",
+      "home_win_percentage_last_five_games",
+      "home_rest_days_since_last_game",
+      "home_average_point_differential",
+      "home_points_scored_per_game",
+      "home_points_scored_last_five_games",
+      "home_points_allowed_per_game",
+      "home_points_allowed_last_five_games",
+      "visitor_season_win_percentage",
+      "visitor_win_percentage_last_five_games",
+      "visitor_rest_days_since_last_game",
+      "visitor_average_point_differential",
+      "visitor_points_scored_per_game",
+      "visitor_points_scored_last_five_games",
+      "visitor_points_allowed_per_game",
+      "visitor_points_allowed_last_five_games",
+      "last5_win_pct_diff",
+      "season_point_margin_diff",
+      "last5_point_margin_diff",
+      "rest_days_diff"
+    ],
+    "without_rest": [
+      "home_season_win_percentage",
+      "home_win_percentage_last_five_games",
+      "home_average_point_differential",
+      "home_points_scored_per_game",
+      "home_points_scored_last_five_games",
+      "home_points_allowed_per_game",
+      "home_points_allowed_last_five_games",
+      "home_record_at_home",
+      "home_record_as_visitor",
+      "visitor_season_win_percentage",
+      "visitor_win_percentage_last_five_games",
+      "visitor_average_point_differential",
+      "visitor_points_scored_per_game",
+      "visitor_points_scored_last_five_games",
+      "visitor_points_allowed_per_game",
+      "visitor_points_allowed_last_five_games",
+      "visitor_record_at_home",
+      "visitor_record_as_visitor",
+      "last5_win_pct_diff",
+      "season_point_margin_diff",
+      "last5_point_margin_diff"
+    ],
+    "without_season_win_pct": [
+      "home_win_percentage_last_five_games",
+      "home_rest_days_since_last_game",
+      "home_average_point_differential",
+      "home_points_scored_per_game",
+      "home_points_scored_last_five_games",
+      "home_points_allowed_per_game",
+      "home_points_allowed_last_five_games",
+      "home_record_at_home",
+      "home_record_as_visitor",
+      "visitor_win_percentage_last_five_games",
+      "visitor_rest_days_since_last_game",
+      "visitor_average_point_differential",
+      "visitor_points_scored_per_game",
+      "visitor_points_scored_last_five_games",
+      "visitor_points_allowed_per_game",
+      "visitor_points_allowed_last_five_games",
+      "visitor_record_at_home",
+      "visitor_record_as_visitor",
+      "last5_win_pct_diff",
+      "season_point_margin_diff",
+      "last5_point_margin_diff",
+      "rest_days_diff"
+    ],
+    "without_raw_scoring": [
+      "home_season_win_percentage",
+      "home_win_percentage_last_five_games",
+      "home_rest_days_since_last_game",
+      "home_average_point_differential",
+      "home_record_at_home",
+      "home_record_as_visitor",
+      "visitor_season_win_percentage",
+      "visitor_win_percentage_last_five_games",
+      "visitor_rest_days_since_last_game",
+      "visitor_average_point_differential",
+      "visitor_record_at_home",
+      "visitor_record_as_visitor",
+      "last5_win_pct_diff",
+      "season_point_margin_diff",
+      "last5_point_margin_diff",
+      "rest_days_diff"
+    ],
+    "compact_7": [
+      "home_season_win_percentage",
+      "visitor_season_win_percentage",
+      "season_point_margin_diff",
+      "margin_last_10_diff",
+      "rest_days_diff",
+      "home_record_at_home",
+      "visitor_record_as_visitor"
+    ],
+    "compact_9": [
+      "home_season_win_percentage",
+      "visitor_season_win_percentage",
+      "season_point_margin_diff",
+      "margin_last_10_diff",
+      "rest_days_diff",
+      "home_record_at_home",
+      "visitor_record_as_visitor",
+      "home_rest_days_since_last_game",
+      "visitor_rest_days_since_last_game"
+    ]
+  }
+}

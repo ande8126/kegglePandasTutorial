@@ -30,6 +30,8 @@ class NBASetupTests(unittest.TestCase):
         original = self.raw.copy(deep=True)
         result = setup_nba_experiment(nba_data=self.raw)
         assert_frame_equal(self.raw, original)
+        self.assertEqual(result.nba_model_features, list(ALL_MODEL_FEATURES))
+        self.assertEqual(list(result.X_train), list(ALL_MODEL_FEATURES))
         self.assertEqual(len(result.team_games), 2 * len(self.raw))
         self.assertEqual(len(result.nba_model_data), len(self.raw))
         self.assertEqual(result.train.season.max(), 2024)

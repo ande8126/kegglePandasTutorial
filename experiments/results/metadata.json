@@ -1,0 +1,27 @@
+{
+  "snapshot_sha256": "306b707883c749a343fc62f74d63a1fed7f06e1f2ae9da5e2a841df3c23742ed",
+  "rows": 5452,
+  "snapshot_latest_game": "2026-11-11",
+  "pandas": "3.0.6",
+  "numpy": "2.5.3",
+  "scikit_learn": "1.9.1",
+  "forest": {
+    "n_estimators": 200,
+    "min_samples_leaf": 10,
+    "max_features": 1.0
+  },
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "validation_seasons": [
+    2023,
+    2024,
+    2025
+  ],
+  "training_rule": "All available seasons strictly before validation season",
+  "2026_used_for_selection": false,
+  "comparison_rows": "Common complete cases across every candidate feature set",
+  "uncertainty": "2000 paired date-block bootstrap replicates; 95% percentile intervals"
+}

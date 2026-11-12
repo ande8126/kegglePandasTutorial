@@ -43,7 +43,7 @@ statistics, rest days, home/visitor records, and matchup differences. History
 resets by season and excludes the current game's result. Earlier games within
 the validation season contribute to later games' features.
 
-The default model inputs are the eight currently selected in that notebook.
+The default model inputs are all 24 pregame features recommended by the feature study.
 All generated features remain available in `experiment.nba_model_data`, including
 rows with missing early-season history. `experiment.model_data` drops rows missing
 the selected inputs. Training and validation are copies of that filtered table;
@@ -82,3 +82,10 @@ use the same game IDs when comparing feature sets. Regular-season and postseason
 games are included together, matching the existing notebooks.
 
 See `experiment_setup.ipynb` for a ready-to-run starting notebook.
+
+## Feature study
+
+See [the feature findings](experiments/FEATURE_FINDINGS.md) for the live-data
+audit, chronological random-forest comparisons, and a recommended feature set.
+The experiments leave the production setup and existing notebooks unchanged.
+Reproduce them with `.venv/bin/python -m experiments.nba_feature_study`.

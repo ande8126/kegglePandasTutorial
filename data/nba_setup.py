@@ -31,17 +31,8 @@ ALL_MODEL_FEATURES = tuple(
     for feature in TEAM_FEATURES
 ) + DIFFERENCE_FEATURES
 
-# The eight inputs currently selected in random_forest.ipynb.
-DEFAULT_MODEL_FEATURES = (
-    "home_season_win_percentage",
-    "visitor_season_win_percentage",
-    "season_point_margin_diff",
-    "last5_point_margin_diff",
-    "rest_days_diff",
-    "last5_win_pct_diff",
-    "home_record_at_home",
-    "visitor_record_as_visitor",
-)
+# The study's recommended working set; the advantage over eight inputs is modest.
+DEFAULT_MODEL_FEATURES = ALL_MODEL_FEATURES
 
 
 def setup_nba_experiment(*, validation_season=2025, model_features=None, nba_data=None):
@@ -54,8 +45,8 @@ def setup_nba_experiment(*, validation_season=2025, model_features=None, nba_dat
 
     Training uses all available seasons before validation_season; validation
     uses that season only. Later seasons remain in nba_model_data/model_data.
-    Defaults to the eight inputs selected in random_forest.ipynb. Pass a list
-    of model_features (or ALL_MODEL_FEATURES) to change the model inputs.
+    Defaults to all 24 pregame model features, following the feature study.
+    Pass a list of model_features to compare a smaller set of inputs.
     Rows missing selected inputs are dropped only from model_data.
 
     All historical features reset by season and exclude the current result.
